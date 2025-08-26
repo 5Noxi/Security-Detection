@@ -2,8 +2,8 @@
 
 Preview:
 ![avpre](https://github.com/5Noxi/Security-Detector/blob/main/sec.png?raw=true)
-⠀
-__It outputs:__
+
+##  Script Output
 - Windows Defender status 
   - `Get-MpComputerStatus` - `AntivirusEnabled`
 - Status of all firewall profiles 
@@ -45,7 +45,7 @@ Disable UAC:
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 ```
 
-__References:__
+References:
 > https://learn.microsoft.com/en-us/powershell/module/defender/get-mpcomputerstatus?view=windowsserver2025-ps
 > https://learn.microsoft.com/en-us/powershell/module/netsecurity/get-netfirewallprofile?view=windowsserver2025-ps (`Select-Object -Property Name, Enabled`)
 > https://learn.microsoft.com/en-us/powershell/module/secureboot/confirm-securebootuefi?view=windowsserver2025-ps
