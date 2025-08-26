@@ -16,6 +16,7 @@ Preview:
 - Currently running antivirus services
   - Searches for services including a predefined pattern (AV names), this might be a bit faulty
 - UAC status (`UserAccountControlSettings.exe`):
+
 `Always notify me when: ...`
 ```ps
 RegSetValue    HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA    Type: REG_DWORD, Length: 4, Data: 1
