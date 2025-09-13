@@ -3,20 +3,18 @@
 Preview:
 ![avpre](https://github.com/5Noxi/Security-Detector/blob/main/sec.png?raw=true)
 
-##  Script Output
-- Windows Defender status 
-  - `Get-MpComputerStatus` - `AntivirusEnabled`
-- Status of all firewall profiles 
-  - `Get-NetFirewallProfile | Select-Object -Property Name, Enabled`
-- Secure boot state
-  - `Confirm-SecureBootUEFI`, outputs `True` or `False`
-- BitLocker encryption status for drives
-  - `Get-BitLockerVolume | Select-Object -Property MountPoint, VolumeStatus, EncryptionMethod, ProtectionStatus`
-- Installed AV programs
-- Currently running antivirus services
-  - Searches for services including a predefined pattern (AV names), this might be a bit faulty
-- UAC status (`UserAccountControlSettings.exe`):
+## Script Output
 
+| Category                 | Source / Command | Details |
+|--------------------------|------------------|----------------------|
+| **Windows Defender Status** | `Get-MpComputerStatus` | `AntivirusEnabled` |
+| **Firewall Profiles**    | `Get-NetFirewallProfile \| Select-Object -Property Name, Enabled` | Displays the status of all firewall profiles, including profile `Name` and whether it is `Enabled` |
+| **Secure Boot State**    | `Confirm-SecureBootUEFI` | Outputs `True` or `False` depending on whether Secure Boot is enabled |
+| **BitLocker Status**     | `Get-BitLockerVolume \| Select-Object -Property MountPoint, VolumeStatus, EncryptionMethod, ProtectionStatus` | Shows drive letter, status, encryption method, and protection status for each volume |
+| **Installed AV Programs** | System Query | Lists installed antivirus software on the system |
+| **Running AV Services**  | Service Search (pattern match) | Searches for running services that match known antivirus names *(may not always be fully accurate)* |
+
+## UAC status (`UserAccountControlSettings.exe`):
 `Always notify me when: ...`
 ```ps
 RegSetValue    HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA    Type: REG_DWORD, Length: 4, Data: 1
@@ -47,15 +45,8 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Enab
 ```
 
 References:
-> https://learn.microsoft.com/en-us/powershell/module/defender/get-mpcomputerstatus?view=windowsserver2025-ps
->
-> https://learn.microsoft.com/en-us/powershell/module/netsecurity/get-netfirewallprofile?view=windowsserver2025-ps (`Select-Object -Property Name, Enabled`)
->
-> https://learn.microsoft.com/en-us/powershell/module/secureboot/confirm-securebootuefi?view=windowsserver2025-ps
->
-> https://learn.microsoft.com/en-us/powershell/module/bitlocker/get-bitlockervolume?view=windowsserver2025-ps (`Select-Object -Property MountPoint, VolumeStatus, EncryptionMethod, ProtectionStatus`)
->
-> https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.5
-
-## Discord Server 
-- https://discord.gg/E2ybG4j9jU
+> https://learn.microsoft.com/en-us/powershell/module/defender/get-mpcomputerstatus?view=windowsserver2025-ps  
+> https://learn.microsoft.com/en-us/powershell/module/netsecurity/get-netfirewallprofile?view=windowsserver2025-ps (`Select-Object -Property Name, Enabled`)  
+> https://learn.microsoft.com/en-us/powershell/module/secureboot/confirm-securebootuefi?view=windowsserver2025-ps  
+> https://learn.microsoft.com/en-us/powershell/module/bitlocker/get-bitlockervolume?view=windowsserver2025-ps (`Select-Object -Property MountPoint, VolumeStatus, EncryptionMethod, ProtectionStatus`)  
+> https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.5  
