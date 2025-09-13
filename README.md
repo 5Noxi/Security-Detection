@@ -12,7 +12,7 @@ Preview:
 | **Secure Boot State**    | `Confirm-SecureBootUEFI` | Outputs `True` or `False` depending on whether Secure Boot is enabled |
 | **BitLocker Status**     | `Get-BitLockerVolume \| Select-Object -Property MountPoint, VolumeStatus, EncryptionMethod, ProtectionStatus` | Shows drive letter, status, encryption method, and protection status for each volume |
 | **Installed AV Programs** | System Query | Lists installed antivirus software on the system |
-| **Running AV Services**  | Service Search (pattern match) | Searches for running services that match known antivirus names *(may not always be fully accurate)* |
+| **Running AV Services**  | Service Search (pattern match) | Searches for running services that match known antivirus names (may not always be fully accurate) |
 
 ## UAC status (`UserAccountControlSettings.exe`):
 `Always notify me when: ...`
