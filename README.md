@@ -1,4 +1,4 @@
-# Security Detection
+# Security Audit
 
 Preview:
 ![avpre](https://github.com/5Noxi/Security-Detector/blob/main/sec.png?raw=true)
