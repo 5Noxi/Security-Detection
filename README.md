@@ -1,7 +1,7 @@
 # Security Audit
 
 Preview:
-![avpre](https://github.com/5Noxi/Security-Detector/blob/main/sec.png?raw=true)
+![](https://github.com/5Noxi/sec-audit/blob/main/images/secpre.png?raw=true)
 
 ## Script Output
 
